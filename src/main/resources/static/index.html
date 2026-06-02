@@ -8,7 +8,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: #f0f2f5; }
 
-        /* SIDEBAR */
         .sidebar { width: 220px; background: #1a1a2e; height: 100vh; position: fixed; padding: 20px; }
         .sidebar h2 { color: #fff; font-size: 18px; margin-bottom: 30px; }
         .sidebar a {
@@ -18,11 +17,9 @@
         }
         .sidebar a:hover, .sidebar a.active { background: #16213e; color: #fff; }
 
-        /* MAIN */
         .main { margin-left: 220px; padding: 30px; }
         .header { font-size: 24px; font-weight: bold; color: #1a1a2e; margin-bottom: 25px; }
 
-        /* CARDS */
         .cards { display: flex; gap: 20px; margin-bottom: 30px; }
         .card {
             background: #fff; padding: 25px; border-radius: 12px;
@@ -35,7 +32,6 @@
         .card.orange p { color: #ff9f1c; }
         .card.red p { color: #e63946; }
 
-        /* SECTION */
         .section {
             background: #fff; border-radius: 12px; padding: 25px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 25px;
@@ -46,7 +42,6 @@
         }
         .section h3 { font-size: 18px; color: #1a1a2e; }
 
-        /* TABLE */
         table { width: 100%; border-collapse: collapse; }
         th {
             background: #f8f9fa; padding: 12px; text-align: left;
@@ -56,7 +51,6 @@
         tr:last-child td { border-bottom: none; }
         tbody tr:hover { background: #f8f9fa; cursor: pointer; }
 
-        /* BADGES */
         .badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
         .badge.pending { background: #fff3cd; color: #856404; }
         .badge.delivered { background: #d1e7dd; color: #0f5132; }
@@ -65,7 +59,6 @@
         .badge.active { background: #d1e7dd; color: #0f5132; }
         .badge.inactive { background: #f8d7da; color: #842029; }
 
-        /* BUTTONS */
         .btn {
             padding: 9px 18px; border-radius: 8px; border: none;
             cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.2s;
@@ -78,7 +71,6 @@
         .btn-outline { background: transparent; border: 1px solid #ddd; color: #444; }
         .btn-outline:hover { background: #f0f2f5; }
 
-        /* SEARCH BOX */
         .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
         .search-box input {
             flex: 1; padding: 10px 15px; border: 1px solid #ddd;
@@ -86,7 +78,6 @@
         }
         .search-box input:focus { border-color: #4361ee; }
 
-        /* TRACKING RESULT */
         .track-result {
             padding: 20px; background: #f8f9fa; border-radius: 8px;
             display: none; border-left: 4px solid #4361ee;
@@ -94,7 +85,6 @@
         .track-result p { margin-bottom: 8px; font-size: 14px; color: #444; }
         .track-result strong { color: #1a1a2e; }
 
-        /* MODAL */
         .modal-overlay {
             position: fixed; inset: 0; background: rgba(0,0,0,0.5);
             z-index: 200; display: none; align-items: center; justify-content: center;
@@ -115,11 +105,9 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
 
-        /* PAGES */
         .page { display: none; }
         .page.active { display: block; }
 
-        /* TOAST */
         .toast {
             position: fixed; bottom: 24px; right: 24px;
             padding: 12px 20px; border-radius: 8px; font-size: 14px;
@@ -130,19 +118,15 @@
         .toast.error { background: #e63946; color: #fff; }
         .toast.show { display: block; }
 
-        /* EMPTY */
         .empty { text-align: center; padding: 40px; color: #aaa; font-size: 14px; }
 
-        /* ACTIONS */
         .actions { display: flex; gap: 6px; }
 
-        /* LOADING */
         .loading { text-align: center; padding: 30px; color: #aaa; }
     </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
     <h2>🚚 CargoTrack</h2>
     <a onclick="navigate('dashboard')" id="nav-dashboard" class="active">📊 Ana Panel</a>
@@ -154,7 +138,6 @@
 
 <div class="main">
 
-    <!-- ANA PANEL -->
     <div class="page active" id="page-dashboard">
         <div class="header">Ana Panel</div>
         <div class="cards">
@@ -195,7 +178,6 @@
         </div>
     </div>
 
-    <!-- KARGOLAR -->
     <div class="page" id="page-shipments">
         <div class="header">Kargolar</div>
         <div class="section">
@@ -221,7 +203,6 @@
         </div>
     </div>
 
-    <!-- KARGO TAKİP -->
     <div class="page" id="page-tracking">
         <div class="header">Kargo Takip</div>
         <div class="section">
@@ -241,7 +222,6 @@
         </div>
     </div>
 
-    <!-- MÜŞTERİLER -->
     <div class="page" id="page-customers">
         <div class="header">Müşteriler</div>
         <div class="section">
@@ -265,7 +245,6 @@
         </div>
     </div>
 
-    <!-- TAŞIYICILAR -->
     <div class="page" id="page-carriers">
         <div class="header">Taşıyıcılar</div>
         <div class="section">
@@ -291,7 +270,6 @@
 
 </div>
 
-<!-- MODAL: YENİ KARGO -->
 <div class="modal-overlay" id="modal-shipment">
     <div class="modal">
         <h3>📦 Yeni Kargo Ekle</h3>
@@ -341,7 +319,6 @@
     </div>
 </div>
 
-<!-- MODAL: YENİ MÜŞTERİ -->
 <div class="modal-overlay" id="modal-customer">
     <div class="modal">
         <h3>👤 Yeni Müşteri Ekle</h3>
@@ -386,7 +363,6 @@
     </div>
 </div>
 
-<!-- MODAL: YENİ TAŞIYICI -->
 <div class="modal-overlay" id="modal-carrier">
     <div class="modal">
         <h3>🏍️ Yeni Taşıyıcı Ekle</h3>
@@ -415,11 +391,10 @@
     </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-    const BASE = 'http://localhost:8080';
+    const BASE = '';
     const AUTH = 'Basic ' + btoa('admin:admin123');
     const H = { 'Content-Type': 'application/json', 'Authorization': AUTH };
 
@@ -471,7 +446,6 @@
         return new Date(d).toLocaleDateString('tr-TR');
     }
 
-    // DASHBOARD
     async function loadDashboard() {
         try {
             const [shipments, customers, carriers] = await Promise.all([
@@ -503,7 +477,6 @@
         }
     }
 
-    // SHIPMENTS
     async function loadShipments() {
         const tbody = document.getElementById('shipments-table');
         tbody.innerHTML = '<tr><td colspan="8" class="loading">Yükleniyor...</td></tr>';
@@ -532,7 +505,6 @@
         }
     }
 
-    // CUSTOMERS
     async function loadCustomers() {
         const tbody = document.getElementById('customers-table');
         tbody.innerHTML = '<tr><td colspan="6" class="loading">Yükleniyor...</td></tr>';
@@ -558,7 +530,6 @@
         }
     }
 
-    // CARRIERS
     async function loadCarriers() {
         const tbody = document.getElementById('carriers-table');
         tbody.innerHTML = '<tr><td colspan="6" class="loading">Yükleniyor...</td></tr>';
@@ -584,7 +555,6 @@
         }
     }
 
-    // TRACK
     async function trackShipment() {
         const no = document.getElementById('track-input').value.trim();
         if (!no) { toast('Takip numarası girin!', 'error'); return; }
@@ -603,7 +573,6 @@
         }
     }
 
-    // SAVES
     async function saveShipment() {
         try {
             await api('POST', '/api/shipments', {
@@ -653,7 +622,6 @@
         } catch(e) { toast('Hata oluştu!', 'error'); }
     }
 
-    // DELETES
     async function deleteShipment(id) {
         if (!confirm('Bu kargoyu silmek istiyor musunuz?')) return;
         try { await api('DELETE', '/api/shipments/' + id); toast('Kargo silindi'); loadShipments(); }
@@ -682,7 +650,6 @@
         } catch(e) { toast('Güncellenemedi!', 'error'); }
     }
 
-    // INIT
     loadDashboard();
 </script>
 </body>
